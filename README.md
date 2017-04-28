@@ -20,6 +20,24 @@
     - in full-screen
   * `elm-stuff/build-artifacts`
 
+### Calling Functions
+
+  * type annotations
+    - the return type is always the last thing in the list
+  * arguments
+    - separated by spaces, not commas
+    - there are no parentheses around the arguments
+  * pipeline
+    - a list of steps for a transformation
+    - the result of the previous function is passed in as _the last_ argument of the function we're piping into
+    - makes it easier to add a new step/transformation
+    - similar to piping multiple commands together in Unix
+      + …or to the broken telephone game ;o)
+  * comments
+    - `-- a single line comment`
+    - multi-line comments are delimited by `{-` and `-}`
+  * partially applied functions/currying: _soon™_.
+
 
 
   [elm-format]: https://github.com/avh4/elm-format
