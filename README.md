@@ -64,8 +64,60 @@
     sum = \x y -> x + y
     ```
 
+### 6. Rendering HTML
+
+  * Qualified imports
+    - qualify the function name with the module where it's defined
+
+    ```elm
+    import Html
+
+    main =
+        Html.h2 [] [ "Bananas" ]
+    ```
+
+    - `String` is imported like this by default.
+
+  * Alternative: unqualified imports
+    - import specific functions in the current namespace
+
+    ```elm
+    import Html exposing (h2)
+
+    main =
+        h2 [] [ "Bananas" ]
+    ```
+
+    - You can also expose everything in a module `exposing (..)`
+      + e.g, the [`Html`][html] and [`Html.Attributes`][html-attributes] in an HTML app
+
+    - **Best:** use qualified imports, to avoid confusion.
+
+  * View components
+  * `let` expressions
+    - define local variables and/or functions
+    - only available within this let-expression
+    - e.g, scoped within the view component
+    - access the entire local scope
+
+  * Stateless functions give for very nice *composability*
+
+  * *Components* in Elm are just nested view functions
+    - you can decompose it however you want
+
+  * Definitions vs. Functions
+    - *definitions* bind a value to a name (`viewFooter` and `view`)
+      + you can't have a function with zero arguments in Elm
+    - in Elm, the line between functions and definitions gets blurred
+      + *functions* are *stateless*
+      + *values* are *immutable*
+
+  * [Convert HTML to Elm code](http://mbylstra.github.io/html-to-elm/)
+
 
 
   [elm-format]: https://github.com/avh4/elm-format
   [elm-live]: https://github.com/tomekwi/elm-live
   [elm-oracle]: https://www.npmjs.com/package/elm-oracle
+  [html]: http://package.elm-lang.org/packages/elm-lang/html/latest/Html
+  [html-attributes]: http://package.elm-lang.org/packages/elm-lang/html/latest/Html-Attributes
