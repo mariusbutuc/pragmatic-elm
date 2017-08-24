@@ -38,6 +38,32 @@
     - multi-line comments are delimited by `{-` and `-}`
   * partially applied functions/currying: _soon™_.
 
+### 5. Defining Functions
+
+  * "onymous" (?) functions:
+
+    ```elm
+    add x y = x + y
+    ```
+
+  * Elm doesn't do implicit type conversion
+  * functions are guaranteed to be stateless
+    - an isolated black-box with no memory
+    - how does the game maintain state, or send HTTP requests? Managed side-effects: soon™.
+  * (named) anonymous functions:
+
+    ```elm
+    \x y -> x + y
+    ```
+
+    - useful with higher order functions (`String.filter`)
+    - wrap them in parantheses to avoid the risk of them extending to the right
+  * named functions in Elm are just anonymous functions with a name…
+
+    ```elm
+    sum = \x y -> x + y
+    ```
+
 
 
   [elm-format]: https://github.com/avh4/elm-format
